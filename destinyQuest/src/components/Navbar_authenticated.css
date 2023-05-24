@@ -5,7 +5,7 @@
   }
   
   .navbar {
-    background: #19191a;
+    background: #c8c8dd;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -90,7 +90,7 @@
   .menu-icon {
     display: none;
   }
-  
+
   @media screen and (max-width: 960px) {
     .nav-menu {
       display: none;

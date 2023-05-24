@@ -1,15 +1,20 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom' 
-import './Navbar.css'
+import './Navbar_authenticated.css'
 import AQlogo from '/src/assets/AQlogo.svg'
 import { IconContext } from 'react-icons'
 import {AiOutlineHome} from "react-icons/ai"
-import {CiLogin} from "react-icons/ci"
-import {BsPersonAdd} from "react-icons/bs"
 import {CiPlay1} from "react-icons/ci"
 import {FaTimes,FaBars} from "react-icons/fa"
+import {FiSettings} from 'react-icons/fi'
+import {MdOutlineLogout} from 'react-icons/md'
 
-const Navbar = () => {
+const handleLogout = () => {
+    localStorage.removeItem('user');
+    window.dispatchEvent(new Event('userLogout'));
+  };
+
+const Navbar_authenticated = () => {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
@@ -49,25 +54,19 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item">
                     <NavLink
-                        to="/login"
+                        to="/settings"
                         className={({ isActive }) =>
                         "nav-links" + (isActive ? " activated" : "")
                         }
                         onClick={closeMobileMenu}
                     >
-                       <CiLogin className='navbar-icon'/>Login
+                       <FiSettings className='navbar-icon'/>Settings
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink
-                        to="/register"
-                        className={({ isActive }) =>
-                        "nav-links" + (isActive ? " activated" : "")
-                        }
-                        onClick={closeMobileMenu}
-                    >
-                       <BsPersonAdd className='navbar-icon'/>Register
-                    </NavLink>
+                    <Link to="/" onClick={handleLogout} className='nav-links'>
+                        <MdOutlineLogout className='navbar-icon' />Logout    
+                    </Link>
                 </li>
             </ul>
         </div>
@@ -77,4 +76,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar_authenticated

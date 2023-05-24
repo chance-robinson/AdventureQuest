@@ -1,0 +1,42 @@
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 120px;
+}
+
+#copyright {
+  margin: .5rem 0 .5rem 0;
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .footer-column {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-column {
+    flex-basis: 100%;
+  }
+}
