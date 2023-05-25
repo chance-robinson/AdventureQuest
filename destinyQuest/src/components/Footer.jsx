@@ -1,14 +1,14 @@
 import React from "react";
 import "./Footer.css";
-import AQlogo from '/src/assets/AQlogo.svg'
+import AQlogo from "/src/assets/AQlogo.svg";
 
 const Footer = () => {
   return (
     <>
-      <footer id='footer'>
+      <footer id="footer">
         <div className="footer-container">
           <div className="footer-column">
-            <img src={AQlogo} className="footer-img"/>
+            <img src={AQlogo} className="footer-img" alt="AQ Logo" />
           </div>
           <div className="footer-column">
             <h3>Socials</h3>
@@ -23,7 +23,9 @@ const Footer = () => {
             <p>item</p>
           </div>
         </div>
-        <div id="copyright">© 2023 FrostByte Digital LLC. All rights reserved.</div>
+        <div id="copyright">
+          © 2023 FrostByte Digital LLC. All rights reserved.
+        </div>
       </footer>
     </>
   );

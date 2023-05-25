@@ -1,0 +1,10 @@
+.register-container {
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register {
+  border: 1px solid black;
+}

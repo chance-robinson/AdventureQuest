@@ -1,0 +1,10 @@
+.login-container {
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  border: 1px solid black;
+}
