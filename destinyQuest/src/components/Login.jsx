@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./Login.css";
+import "./Login_Register.css";
 
 const Login = () => {
   const userRef = useRef();
@@ -32,7 +32,7 @@ const Login = () => {
   return (
     <>
       {success ? (
-        <section>
+        <section className="success">
           <h1>You are logged in!</h1>
           <br />
           <p>
@@ -50,7 +50,7 @@ const Login = () => {
           </p>
           <h1>Sign In</h1>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Username:</label>
+            <label htmlFor="username">Username</label>
             <input
               type="text"
               id="username"
@@ -61,7 +61,7 @@ const Login = () => {
               required
             />
 
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               id="password"

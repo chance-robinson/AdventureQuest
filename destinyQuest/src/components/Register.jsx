@@ -3,7 +3,7 @@ import { BsCheckCircle } from "react-icons/bs";
 import { FaTimes } from "react-icons/fa";
 import { BiInfoCircle } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import "./Register.css";
+import "./Login_Register.css";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -63,7 +63,7 @@ const Register = () => {
   return (
     <>
       {success ? (
-        <section>
+        <section className="success">
           <h1>Success!</h1>
           <p>
             <Link to="/login">Sign In</Link>
@@ -81,7 +81,7 @@ const Register = () => {
           <h1>Register</h1>
           <form onSubmit={handleSubmit}>
             <label htmlFor="username">
-              Username:
+              Username
               <BsCheckCircle className={validName ? "valid" : "hide"} />
               <FaTimes className={validName || !user ? "hide" : "invalid"} />
             </label>
@@ -113,7 +113,7 @@ const Register = () => {
             </p>
 
             <label htmlFor="password">
-              Password:
+              Password
               <BsCheckCircle className={validPwd ? "valid" : "hide"} />
               <FaTimes className={validPwd || !pwd ? "hide" : "invalid"} />
             </label>
@@ -135,8 +135,8 @@ const Register = () => {
               <BiInfoCircle />
               8 to 24 characters.
               <br />
-              Must include uppercase and lowercase letters, a number and a
-              special character.
+              Must include uppercase and lowercase letters, 
+              a number and a special character.
               <br />
               Allowed special characters:{" "}
               <span aria-label="exclamation mark">!</span>{" "}
@@ -147,7 +147,7 @@ const Register = () => {
             </p>
 
             <label htmlFor="confirm_pwd">
-              Confirm Password:
+              Confirm Password
               <BsCheckCircle
                 className={validMatch && matchPwd ? "valid" : "hide"}
               />

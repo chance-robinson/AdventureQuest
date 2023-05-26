@@ -10,16 +10,16 @@ const Footer = () => {
       <footer id="footer">
         <div className="footer-container">
           <div className="footer-row">
-            <a href="/" className="footer-socials">
+            <a href="https://www.facebook.com/" target="_blank" className="footer-socials">
             <AiFillFacebook/>
             </a>
-            <a href="/" className="footer-socials">
+            <a href="https://www.instagram.com/" target="_blank" className="footer-socials">
             <AiFillInstagram/>
             </a>
-            <a href="/" className="footer-socials">
+            <a href="https://twitter.com/" target="_blank" className="footer-socials">
             <AiFillTwitterSquare/>
             </a>
-            <a href="/" className="footer-socials">
+            <a href="https://discord.com/" target="_blank" className="footer-socials">
             <RiDiscordFill/>
             </a>
           </div>

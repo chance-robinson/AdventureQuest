@@ -6,6 +6,14 @@ section {
   flex-direction: column;
   justify-content: flex-start;
   padding: 1rem;
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  border-radius: .5rem;
+}
+
+.success {
+  min-width: auto;
+  min-height: auto;
 }
 
 form {
@@ -38,8 +46,8 @@ button {
 .instructions {
   font-size: 0.75rem;
   border-radius: 0.5rem;
-  background: #180303;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--secondary-color);
   padding: 0.25rem;
   position: relative;
   bottom: -10px;
