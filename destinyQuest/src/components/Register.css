@@ -6,7 +6,8 @@ section {
   flex-direction: column;
   justify-content: flex-start;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
 }
 
 form {
@@ -39,8 +40,8 @@ button {
 .instructions {
   font-size: 0.75rem;
   border-radius: 0.5rem;
-  background: #000;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--secondary-color);
   padding: 0.25rem;
   position: relative;
   bottom: -10px;

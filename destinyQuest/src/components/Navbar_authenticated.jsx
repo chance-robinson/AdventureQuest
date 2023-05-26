@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import "./Navbar_authenticated.css";
+import "./Navbar.css";
 import AQlogo from "/src/assets/AQlogo.svg";
 import { IconContext } from "react-icons";
 import { AiOutlineHome } from "react-icons/ai";
@@ -20,7 +20,7 @@ const Navbar_authenticated = () => {
   const closeMobileMenu = () => setClick(false);
   return (
     <>
-      <IconContext.Provider value={{ color: "#fff" }}>
+      <IconContext.Provider value={{ color: "var(--secondary-color)" }}>
         <nav className="navbar">
           <div className="navbar-container container">
             <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>

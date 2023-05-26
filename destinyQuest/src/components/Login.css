@@ -6,7 +6,6 @@ section {
   flex-direction: column;
   justify-content: flex-start;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.4);
 }
 
 form {
@@ -39,7 +38,7 @@ button {
 .instructions {
   font-size: 0.75rem;
   border-radius: 0.5rem;
-  background: #000;
+  background: #180303;
   color: #fff;
   padding: 0.25rem;
   position: relative;

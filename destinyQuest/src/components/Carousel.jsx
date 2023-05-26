@@ -28,20 +28,19 @@ const Carousel = () => {
 
   return (
     <div className="carousel">
+      <div className="carousel-info">
+        <h2>{currentImage.title}</h2>
+        <p>{currentImage.text}</p>
+        <a href={currentImage.link} target="_blank">
+          Read More
+        </a>
+      </div>
       <div className="carousel-image-container">
         <img
           src={currentImage.image}
           alt={`Image ${currentImageIndex}`}
           className="carousel-image"
         />
-      </div>
-      <div className="carousel-navigation">
-        <button className="carousel-arrow" onClick={goToPreviousImage}>
-          &lt;
-        </button>
-        <button className="carousel-arrow" onClick={goToNextImage}>
-          &gt;
-        </button>
       </div>
       <div className="carousel-indicators">
         {carouselData.map((item, index) => (
@@ -54,12 +53,13 @@ const Carousel = () => {
           />
         ))}
       </div>
-      <div className="carousel-info">
-        <h2>{currentImage.title}</h2>
-        <p>{currentImage.text}</p>
-        <a href={currentImage.link} target="_blank">
-          Read More
-        </a>
+      <div className="carousel-navigation">
+        <button className="carousel-arrow-left" onClick={goToPreviousImage}>
+          &lt;
+        </button>
+        <button className="carousel-arrow-right" onClick={goToNextImage}>
+          &gt;
+        </button>
       </div>
     </div>
   );
