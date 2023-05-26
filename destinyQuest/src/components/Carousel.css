@@ -15,43 +15,59 @@
 
 .carousel-info {
   position: absolute;
-  top: 40%;
-  left: 30%;
+  top: 45%;
+  left: 25%;
   transform: translate(-50%, -50%);
-  text-align: center;
-  margin-top: 10px;
+  text-align: left;
+  padding: 1rem;
+  border-radius: .5rem;
   z-index: 2;
   background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+a.button {
+  display: inline-block;
+  margin: 1rem 0 .5rem 0;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  border-radius: .5rem;
+  border: none;
+  cursor: pointer;
+}
+
+a.button:hover {
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
 }
 
 .carousel-image {
   width: 100%; /* Added */
   height: 100%; /* Added */
   object-fit: cover; /* Added */
+  border-radius: .5rem;
+  border: 2px solid var(--accent-color);
 }
 
 .carousel-navigation {
   position: absolute;
-  bottom: 50%;
+  bottom: 40%;
   left: 0;
   right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
-  z-index: 2;
+  padding: 0 40px;
+  z-index: 1;
 }
 
-.carousel-arrow-right {
-  font-size: 20px;
-  padding: 5px 10px;
+.carousel-arrow {
+  font-size: 2.5rem;
   cursor: pointer;
-}
-
-.carousel-arrow-left {
-  font-size: 20px;
-  padding: 5px 10px;
-  cursor: pointer;
+  color: var(--accent-color);
 }
 
 .carousel-indicators {
@@ -68,11 +84,24 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: gray;
+  background-color: var(--secondary-color);
   margin: 0 5px;
   cursor: pointer;
 }
 
 .carousel-indicator.active {
-  background-color: black;
+  background-color: var(--accent-color);
+  transform: scale(1.35);
+}
+
+@media (max-width: 960px) {
+  .carousel-info {
+    left: 30%;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-info {
+    left: 40%;
+  }
 }

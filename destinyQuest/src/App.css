@@ -1,6 +1,36 @@
 .page-container {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  background-color: var(--primary-color);
-}
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .menu-toggle {
+    filter: brightness(80%);
+    z-index: 5;
+  }
+  
+  @media screen and (max-width: 960px) {
+    .page-container {
+      width: 95%;
+      margin: 0 2.5%; /* Add margins of 2.5% on both sides */
+    }
+  }
+  
+  @media (min-width: 1921px) {
+    .page-container {
+      width: 100%;
+      max-width: 1920px; /* Limit the width to 1080 pixels for screens larger than 1080 pixels */
+      margin: 0 auto; /* Center the container horizontally */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .page-container {
+      width: 98%;
+      margin: 0 1%; /* Add margins of 1% on both sides */
+    }
+  }
+  

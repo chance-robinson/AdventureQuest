@@ -17,6 +17,11 @@ import Navbar_authenticated from './components/Navbar_authenticated'
 
 const AppLayout = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  }
 
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem('user'));
@@ -34,11 +39,26 @@ const AppLayout = () => {
       window.removeEventListener('userLogin', handleUserLogin);
     };
   }, []);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      if (window.innerWidth > 960) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
   
   return (
     <>
-    {!isLoggedIn && <Navbar />}
-    {isLoggedIn && <Navbar_authenticated />}
+    <div className={isMobileMenuOpen ? 'menu-toggle' : ''}>
+      {!isLoggedIn && <Navbar toggleMobileMenu={toggleMobileMenu} toggled={isMobileMenuOpen} />}
+      {isLoggedIn && <Navbar_authenticated toggleMobileMenu={toggleMobileMenu} toggled={isMobileMenuOpen} />}
+    </div>
     <Outlet />
     <Footer />
     </>

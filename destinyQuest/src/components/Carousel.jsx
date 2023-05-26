@@ -1,28 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { carouselData } from "../assets/carouselData";
 import "./Carousel.css";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 const Carousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const currentImage = carouselData[currentImageIndex];
+  const intervalRef = useRef(null);
 
   const goToPreviousImage = () => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? carouselData.length - 1 : prevIndex - 1
     );
+    resetInterval();
   };
 
   const goToNextImage = () => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === carouselData.length - 1 ? 0 : prevIndex + 1
     );
+    resetInterval();
+  };
+
+  const resetInterval = () => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(goToNextImage, 6000);
   };
 
   useEffect(() => {
-    const interval = setInterval(goToNextImage, 6000);
+    intervalRef.current = setInterval(goToNextImage, 6000);
 
     return () => {
-      clearInterval(interval);
+      clearInterval(intervalRef.current);
     };
   }, []);
 
@@ -31,7 +40,7 @@ const Carousel = () => {
       <div className="carousel-info">
         <h2>{currentImage.title}</h2>
         <p>{currentImage.text}</p>
-        <a href={currentImage.link} target="_blank">
+        <a href={currentImage.link} target="_blank" className="button">
           Read More
         </a>
       </div>
@@ -49,17 +58,20 @@ const Carousel = () => {
             className={`carousel-indicator ${
               index === currentImageIndex ? "active" : ""
             }`}
-            onClick={() => setCurrentImageIndex(index)}
+            onClick={() => {
+              setCurrentImageIndex(index);
+              resetInterval();
+            }}
           />
         ))}
       </div>
       <div className="carousel-navigation">
-        <button className="carousel-arrow-left" onClick={goToPreviousImage}>
-          &lt;
-        </button>
-        <button className="carousel-arrow-right" onClick={goToNextImage}>
-          &gt;
-        </button>
+        <div className="carousel-arrow" onClick={goToPreviousImage}>
+          <MdChevronLeft />
+        </div>
+        <div className="carousel-arrow" onClick={goToNextImage}>
+          <MdChevronRight />
+        </div>
       </div>
     </div>
   );
