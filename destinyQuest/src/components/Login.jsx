@@ -2,6 +2,16 @@ import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Login_Register.css";
 
+const SuccessMessage = () => (
+  <section className="success">
+    <h1>You are logged in!</h1>
+    <br />
+    <p>
+      <Link to="/">Go to Home</Link>
+    </p>
+  </section>
+);
+
 const Login = () => {
   const userRef = useRef();
   const errRef = useRef();
@@ -19,7 +29,6 @@ const Login = () => {
     setErrMsg("");
   }, [user, pwd]);
 
-  // TEMP SUBMIT
   const handleSubmit = async (e) => {
     e.preventDefault();
     setUser("");
@@ -32,13 +41,7 @@ const Login = () => {
   return (
     <>
       {success ? (
-        <section className="success">
-          <h1>You are logged in!</h1>
-          <br />
-          <p>
-            <Link to="/">Go to Home</Link>
-          </p>
-        </section>
+        <SuccessMessage />
       ) : (
         <section>
           <p
@@ -69,7 +72,7 @@ const Login = () => {
               value={pwd}
               required
             />
-            <button disabled={!user || !pwd ? true : false}>Sign In</button>
+            <button disabled={!user || !pwd}>Sign In</button>
           </form>
           <p>
             Need an Account?

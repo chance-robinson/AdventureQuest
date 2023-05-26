@@ -15,13 +15,18 @@ const handleLogout = () => {
 };
 
 const Navbar_authenticated = ({ toggleMobileMenu, toggled }) => {
+  const handleLinkClick = () => {
+    if (toggled) {
+      toggleMobileMenu();
+    }
+  };
 
   return (
     <>
       <IconContext.Provider value={{ color: "var(--secondary-color)" }}>
         <nav className="navbar">
           <div className="navbar-container container">
-            <Link to="/" className="navbar-logo" onClick={() => {if (toggled) toggleMobileMenu(); }}>
+            <Link to="/" className="navbar-logo" onClick={handleLinkClick}>
               <img src={AQlogo} className="navbar-img" />
             </Link>
             <div className="menu-icon" onClick={toggleMobileMenu}>
@@ -34,7 +39,7 @@ const Navbar_authenticated = ({ toggleMobileMenu, toggled }) => {
                   className={({ isActive }) =>
                     "nav-links" + (isActive ? " activated" : "")
                   }
-                  onClick={() => {if (toggled) toggleMobileMenu(); }}
+                  onClick={handleLinkClick}
                 >
                   <AiOutlineHome className="navbar-icon" />
                   Home
@@ -46,7 +51,7 @@ const Navbar_authenticated = ({ toggleMobileMenu, toggled }) => {
                   className={({ isActive }) =>
                     "nav-links" + (isActive ? " activated" : "")
                   }
-                  onClick={() => {if (toggled) toggleMobileMenu(); }}
+                  onClick={handleLinkClick}
                 >
                   <CiPlay1 className="navbar-icon" />
                   Play Now
@@ -58,7 +63,7 @@ const Navbar_authenticated = ({ toggleMobileMenu, toggled }) => {
                   className={({ isActive }) =>
                     "nav-links" + (isActive ? " activated" : "")
                   }
-                  onClick={() => {if (toggled) toggleMobileMenu(); }}
+                  onClick={handleLinkClick}
                 >
                   <FiSettings className="navbar-icon" />
                   Settings

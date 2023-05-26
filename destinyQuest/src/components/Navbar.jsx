@@ -9,63 +9,70 @@ import { BsPersonAdd } from "react-icons/bs";
 import { CiPlay1 } from "react-icons/ci";
 import { FaTimes, FaBars } from "react-icons/fa";
 
+const iconContextValue = { color: "var(--secondary-color)" };
+
 const Navbar = ({ toggleMobileMenu, toggled }) => {
+  const handleLinkClick = () => {
+    if (toggled) {
+      toggleMobileMenu();
+    }
+  };
 
   return (
     <>
-      <IconContext.Provider value={{ color: "var(--secondary-color)" }}>
+      <IconContext.Provider value={iconContextValue}>
         <nav className="navbar">
-          <div className="navbar-container container" >
-            <Link to="/" className="navbar-logo" onClick={() => {if (toggled) toggleMobileMenu(); }}>
+          <div className="navbar-container container">
+            <Link to="/" className="navbar-logo" onClick={handleLinkClick}>
               <img src={AQlogo} className="navbar-img" />
             </Link>
             <div className="menu-icon" onClick={toggleMobileMenu}>
               {toggled ? <FaTimes /> : <FaBars />}
             </div>
             <ul className={toggled ? "nav-menu active" : "nav-menu"}>
-              <li className="nav-item">
+              <li className="nav-item" >
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
                     "nav-links" + (isActive ? " activated" : "")
                   }
-                  onClick={() => {if (toggled) toggleMobileMenu(); }}
+                  onClick={handleLinkClick}
                 >
                   <AiOutlineHome className="navbar-icon" />
                   Home
                 </NavLink>
               </li>
-              <li className="nav-item">
+              <li className="nav-item" >
                 <NavLink
                   to="/play"
                   className={({ isActive }) =>
                     "nav-links" + (isActive ? " activated" : "")
                   }
-                  onClick={() => {if (toggled) toggleMobileMenu(); }}
+                  onClick={handleLinkClick}
                 >
                   <CiPlay1 className="navbar-icon" />
                   Play Now
                 </NavLink>
               </li>
-              <li className="nav-item">
+              <li className="nav-item" >
                 <NavLink
                   to="/login"
                   className={({ isActive }) =>
                     "nav-links" + (isActive ? " activated" : "")
                   }
-                  onClick={() => {if (toggled) toggleMobileMenu(); }}
+                  onClick={handleLinkClick}
                 >
                   <CiLogin className="navbar-icon" />
                   Login
                 </NavLink>
               </li>
-              <li className="nav-item">
+              <li className="nav-item" >
                 <NavLink
                   to="/register"
                   className={({ isActive }) =>
                     "nav-links" + (isActive ? " activated" : "")
                   }
-                  onClick={() => {if (toggled) toggleMobileMenu(); }}
+                  onClick={handleLinkClick}
                 >
                   <BsPersonAdd className="navbar-icon" />
                   Register

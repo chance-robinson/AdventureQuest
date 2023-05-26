@@ -1,11 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+// NEED TO IMPLEMENT LAZY LOAD FOR IMAGES RENDERED AFTER THE INTERVAl
+
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { carouselData } from "../assets/carouselData";
 import "./Carousel.css";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 const Carousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const currentImage = carouselData[currentImageIndex];
+  const { title, text, link, image } = carouselData[currentImageIndex];
   const intervalRef = useRef(null);
 
   const goToPreviousImage = () => {
@@ -22,10 +24,10 @@ const Carousel = () => {
     resetInterval();
   };
 
-  const resetInterval = () => {
+  const resetInterval = useCallback(() => {
     clearInterval(intervalRef.current);
     intervalRef.current = setInterval(goToNextImage, 6000);
-  };
+  }, []);
 
   useEffect(() => {
     intervalRef.current = setInterval(goToNextImage, 6000);
@@ -33,20 +35,20 @@ const Carousel = () => {
     return () => {
       clearInterval(intervalRef.current);
     };
-  }, []);
+  }, [goToNextImage, resetInterval]);
 
   return (
     <div className="carousel">
       <div className="carousel-info">
-        <h2>{currentImage.title}</h2>
-        <p>{currentImage.text}</p>
-        <a href={currentImage.link} target="_blank" className="button">
+        <h2>{title}</h2>
+        <p>{text}</p>
+        <a href={link} target="_blank" className="button">
           Read More
         </a>
       </div>
       <div className="carousel-image-container">
         <img
-          src={currentImage.image}
+          src={image}
           alt={`Image ${currentImageIndex}`}
           className="carousel-image"
         />
