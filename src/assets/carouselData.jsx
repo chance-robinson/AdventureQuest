@@ -1,7 +1,7 @@
-import image0 from './carouselImages/download.jpg'
-import image1 from './carouselImages/download (1).jpg'
-import image2 from './carouselImages/download (2).jpg'
-import image3 from './carouselImages/download (3).jpg'
+import image0 from "./carouselImages/download.jpg";
+import image1 from "./carouselImages/download (1).jpg";
+import image2 from "./carouselImages/download (2).jpg";
+import image3 from "./carouselImages/download (3).jpg";
 
 export const carouselData = [
   {

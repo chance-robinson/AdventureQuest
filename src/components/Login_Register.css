@@ -48,7 +48,7 @@ button {
   background: var(--primary-color);
   color: var(--secondary-color);
   padding: 0 0.25rem;
-  margin-top: 0.25rem; 
+  margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   max-width: 300px; /* Add a maximum width */
   word-wrap: break-word; /* Add word-wrap to allow wrapping of long lines */

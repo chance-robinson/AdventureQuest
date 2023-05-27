@@ -1,6 +1,6 @@
 // NEED TO IMPLEMENT LAZY LOAD FOR IMAGES RENDERED AFTER THE INTERVAl
 
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { carouselData } from "../assets/carouselData";
 import "./Carousel.css";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";

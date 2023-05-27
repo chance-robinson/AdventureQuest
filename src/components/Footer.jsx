@@ -1,6 +1,5 @@
-import React from "react";
 import "./Footer.css";
-import AQlogo from './../assets/AQlogo.svg'
+import AQlogo from "./../assets/AQlogo.svg";
 import {
   AiFillFacebook,
   AiFillInstagram,
@@ -51,7 +50,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="footer-row">
-          <img src={AQlogo} className="footer-img" alt="AQ Logo"/>
+          <img src={AQlogo} className="footer-img" alt="AQ Logo" />
         </div>
         <div className="footer-row">
           <p>© 2023 FrostByte Digital LLC. All rights reserved.</p>

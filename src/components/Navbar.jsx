@@ -1,7 +1,6 @@
-import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
-import AQlogo from './../assets/AQlogo.svg'
+import AQlogo from "./../assets/AQlogo.svg";
 import { IconContext } from "react-icons";
 import { AiOutlineHome } from "react-icons/ai";
 import { CiLogin } from "react-icons/ci";
@@ -24,13 +23,18 @@ const Navbar = ({ toggleMobileMenu, toggled }) => {
         <nav className="navbar">
           <div className="navbar-container container">
             <Link to="/" className="navbar-logo" onClick={handleLinkClick}>
-              <img src={AQlogo} className="navbar-img" alt='navbar image' aria-label="home button navbar image"/>
+              <img
+                src={AQlogo}
+                className="navbar-img"
+                alt="navbar image"
+                aria-label="home button navbar image"
+              />
             </Link>
             <div className="menu-icon" onClick={toggleMobileMenu}>
               {toggled ? <FaTimes /> : <FaBars />}
             </div>
             <ul className={toggled ? "nav-menu active" : "nav-menu"}>
-              <li className="nav-item" >
+              <li className="nav-item">
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
@@ -42,7 +46,7 @@ const Navbar = ({ toggleMobileMenu, toggled }) => {
                   Home
                 </NavLink>
               </li>
-              <li className="nav-item" >
+              <li className="nav-item">
                 <NavLink
                   to="/play"
                   className={({ isActive }) =>
@@ -54,7 +58,7 @@ const Navbar = ({ toggleMobileMenu, toggled }) => {
                   Play Now
                 </NavLink>
               </li>
-              <li className="nav-item" >
+              <li className="nav-item">
                 <NavLink
                   to="/login"
                   className={({ isActive }) =>
@@ -66,7 +70,7 @@ const Navbar = ({ toggleMobileMenu, toggled }) => {
                   Login
                 </NavLink>
               </li>
-              <li className="nav-item" >
+              <li className="nav-item">
                 <NavLink
                   to="/register"
                   className={({ isActive }) =>

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import "./Play.css";
 import { BiExpand } from "react-icons/bi";
 
@@ -23,12 +23,12 @@ const Play = () => {
   return (
     <div className="play">
       <div className="game-container">
-      <iframe
-        ref={iframeRef}
-        src="https://v6p9d9t4.ssl.hwcdn.net/html/7798668/ThwackFullWeb/index.html"
-        className="game"
-      ></iframe>
-      <BiExpand onClick={enterFullscreen} id="fullscreen" />
+        <iframe
+          ref={iframeRef}
+          src="https://v6p9d9t4.ssl.hwcdn.net/html/7798668/ThwackFullWeb/index.html"
+          className="game"
+        ></iframe>
+        <BiExpand onClick={enterFullscreen} id="fullscreen" />
       </div>
     </div>
   );
