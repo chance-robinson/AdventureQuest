@@ -18,6 +18,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
             className="footer-socials"
+            aria-label="link to facebook"
           >
             <AiFillFacebook />
           </a>
@@ -26,6 +27,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
             className="footer-socials"
+            aria-label="link to instagram"
           >
             <AiFillInstagram />
           </a>
@@ -34,6 +36,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
             className="footer-socials"
+            aria-label="link to twitter"
           >
             <AiFillTwitterSquare />
           </a>
@@ -42,12 +45,13 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
             className="footer-socials"
+            aria-label="link to discord"
           >
             <RiDiscordFill />
           </a>
         </div>
         <div className="footer-row">
-          <img src={AQlogo} className="footer-img" alt="AQ Logo" />
+          <img src={AQlogo} className="footer-img" alt="AQ Logo"/>
         </div>
         <div className="footer-row">
           <p>© 2023 FrostByte Digital LLC. All rights reserved.</p>

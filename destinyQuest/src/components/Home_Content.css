@@ -1,0 +1,17 @@
+.home-content {
+    margin: 1rem 0 1rem 0;
+    color: var(--secondary-color);
+}
+
+.content-info {
+    margin-top: 2rem;
+}
+
+.content-info h2 {
+    margin-bottom: .5rem;
+    font-size: 1.8rem;
+}
+
+.content-info p {
+    font-size: 1.1rem;
+}

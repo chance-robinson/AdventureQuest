@@ -27,7 +27,7 @@ const Navbar_authenticated = ({ toggleMobileMenu, toggled }) => {
         <nav className="navbar">
           <div className="navbar-container container">
             <Link to="/" className="navbar-logo" onClick={handleLinkClick}>
-              <img src={AQlogo} className="navbar-img" />
+              <img src={AQlogo} className="navbar-img" alt='navbar image' aria-label="home button navbar image"/>
             </Link>
             <div className="menu-icon" onClick={toggleMobileMenu}>
               {toggled ? <FaTimes /> : <FaBars />}
