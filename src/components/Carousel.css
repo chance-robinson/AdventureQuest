@@ -15,24 +15,23 @@
 
 .carousel-info {
   position: absolute;
-  top: 45%;
-  left: 25%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   text-align: left;
   padding: 1rem;
   z-index: 2;
-  background-color: var(--primary-opaque);
   color: var(--secondary-color);
-  border-radius: .5rem;
+  text-align: center;
 }
 
 
 .carousel-info h2 {
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 .carousel-info p {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 a.button {
@@ -41,15 +40,16 @@ a.button {
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
   color: var(--secondary-color);
   border-radius: 0.5rem;
   border: none;
   cursor: pointer;
+  font-size: 1.5rem;
 }
 
 a.button:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: var(--accent-color);
 }
 
@@ -75,6 +75,12 @@ a.button:hover {
 .carousel-arrow {
   font-size: 2.5rem;
   cursor: pointer;
+  color: var(--secondary-color);
+}
+
+.carousel-arrow:hover {
+  font-size: 2.5rem;
+  cursor: pointer;
   color: var(--accent-color);
 }
 
@@ -98,6 +104,11 @@ a.button:hover {
 }
 
 .carousel-indicator.active {
+  background-color: var(--accent-color);
+  transform: scale(1.35);
+}
+
+.carousel-indicator:hover {
   background-color: var(--accent-color);
   transform: scale(1.35);
 }

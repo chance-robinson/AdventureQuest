@@ -11,6 +11,10 @@ section {
   border-radius: 0.5rem;
 }
 
+h1 {
+  color: var(--accent-color)
+}
+
 .success {
   min-width: auto;
   min-height: auto;

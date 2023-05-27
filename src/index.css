@@ -10,9 +10,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --primary-color: hsl(180, 95%, 23%);
-  --primary-opaque: hsla(180, 95%, 23%, .8);
-  --secondary-color: hsla(176, 100%, 52%, 1);
-  --accent-color: hsla(176, 88%, 10%, 1);
+  --primary-color:#071013;
+  --secondary-color:#eb5160;
+  --accent-color:#b7999c;
   background-color: var(--primary-color);
 }
