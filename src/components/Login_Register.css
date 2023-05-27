@@ -24,6 +24,11 @@ form {
   padding-bottom: 1rem;
 }
 
+form label {
+  margin-bottom: 1rem;
+}
+
+
 input[type="text"],
 input[type="password"],
 button,

@@ -11,7 +11,8 @@
   -webkit-text-size-adjust: 100%;
 
   --primary-color: hsl(180, 95%, 23%);
-  --secondary-color: hsl(176, 100%, 52%);
-  --accent-color: hsl(176, 88%, 10%);
+  --primary-opaque: hsla(180, 95%, 23%, .8);
+  --secondary-color: hsla(176, 100%, 52%, 1);
+  --accent-color: hsla(176, 88%, 10%, 1);
   background-color: var(--primary-color);
 }
