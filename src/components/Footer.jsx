@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import AQlogo from "/src/assets/AQlogo.svg";
+import AQlogo from './../assets/AQlogo.svg'
 import {
   AiFillFacebook,
   AiFillInstagram,

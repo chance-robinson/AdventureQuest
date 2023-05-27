@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
-import AQlogo from "/src/assets/AQlogo.svg";
+import AQlogo from './../assets/AQlogo.svg'
 import { IconContext } from "react-icons";
 import { AiOutlineHome } from "react-icons/ai";
 import { CiPlay1 } from "react-icons/ci";
