@@ -10,8 +10,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --primary-color:#071013;
-  --secondary-color:#eb5160;
-  --accent-color:#b7999c;
+  --primary-color: rgb(21,21,21);
+  --secondary-color: rgb(230,230,230);
+  --accent-color:rgb(99,99,99);
   background-color: var(--primary-color);
 }

@@ -46,11 +46,12 @@ a.button {
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
+  transition: all .25s;
 }
 
 a.button:hover {
-  background-color: var(--primary-color);
-  color: var(--accent-color);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .carousel-image {
@@ -58,6 +59,7 @@ a.button:hover {
   height: 100%; /* Added */
   object-fit: cover; /* Added */
   border-radius: 0.5rem;
+  transform: all .5s;
 }
 
 .carousel-navigation {
@@ -70,18 +72,20 @@ a.button:hover {
   align-items: center;
   padding: 0 40px;
   z-index: 1;
+  user-select: none;
 }
 
 .carousel-arrow {
   font-size: 2.5rem;
   cursor: pointer;
-  color: var(--secondary-color);
+  color: var(--accent-color);
+  transition: color 0.25s; /* Added transition property */
 }
 
 .carousel-arrow:hover {
   font-size: 2.5rem;
   cursor: pointer;
-  color: var(--accent-color);
+  color: var(--secondary-color);
 }
 
 .carousel-indicators {
@@ -98,18 +102,19 @@ a.button:hover {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: var(--secondary-color);
+  background-color: var(--accent-color);
   margin: 0 5px;
   cursor: pointer;
+  transition: all 0.25s; /* Added transition property */
 }
 
 .carousel-indicator.active {
-  background-color: var(--accent-color);
+  background-color: var(--secondary-color);
   transform: scale(1.35);
 }
 
 .carousel-indicator:hover {
-  background-color: var(--accent-color);
+  background-color: var(--secondary-color);
   transform: scale(1.35);
 }
 

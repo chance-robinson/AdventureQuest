@@ -23,6 +23,11 @@ iframe {
   margin: 0 0.5rem 0.5rem 0;
   z-index: 1;
   color: var(--secondary-color);
+  transition: font-size 0.25s;
+}
+
+#fullscreen:hover {
+  font-size: 2rem;
 }
 
 .game {

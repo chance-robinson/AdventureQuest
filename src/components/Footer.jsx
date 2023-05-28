@@ -1,11 +1,11 @@
 import "./Footer.css";
-import AQlogo from "./../assets/AQlogo.svg";
 import {
   AiFillFacebook,
   AiFillInstagram,
   AiFillTwitterSquare,
 } from "react-icons/ai";
 import { RiDiscordFill } from "react-icons/ri";
+import { BsSun } from "react-icons/bs";
 
 const Footer = () => {
   return (
@@ -50,7 +50,10 @@ const Footer = () => {
           </a>
         </div>
         <div className="footer-row">
-          <img src={AQlogo} className="footer-img" alt="AQ Logo" />
+          <div id='footer-logo'>
+
+          <BsSun />&lt;FrostyByte_Digital /&gt; 
+          </div>
         </div>
         <div className="footer-row">
           <p>© 2023 FrostByte Digital LLC. All rights reserved.</p>

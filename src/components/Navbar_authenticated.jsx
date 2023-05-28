@@ -22,7 +22,7 @@ const Navbar_authenticated = ({ toggleMobileMenu, toggled }) => {
 
   return (
     <>
-      <IconContext.Provider value={{ color: "var(--secondary-color)" }}>
+      <IconContext.Provider value={{ color: "var(--accent-color)" }}>
         <nav className="navbar">
           <div className="navbar-container container">
             <Link to="/" className="navbar-logo" onClick={handleLinkClick}>

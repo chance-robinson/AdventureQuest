@@ -28,8 +28,9 @@ h3 {
   width: 100%;
 }
 
-.footer-img {
-  display: block;
-  margin: 0 auto;
-  max-width: 120px;
+#footer-logo {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: .2rem 0;
 }

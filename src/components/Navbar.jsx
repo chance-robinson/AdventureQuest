@@ -8,7 +8,7 @@ import { BsPersonAdd } from "react-icons/bs";
 import { CiPlay1 } from "react-icons/ci";
 import { FaTimes, FaBars } from "react-icons/fa";
 
-const iconContextValue = { color: "var(--secondary-color)" };
+const iconContextValue = { color: "var(--accent-color)" };
 
 const Navbar = ({ toggleMobileMenu, toggled }) => {
   const handleLinkClick = () => {
