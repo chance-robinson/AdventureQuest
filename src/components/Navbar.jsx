@@ -7,10 +7,17 @@ import { CiLogin } from "react-icons/ci";
 import { BsPersonAdd } from "react-icons/bs";
 import { CiPlay1 } from "react-icons/ci";
 import { FaTimes, FaBars } from "react-icons/fa";
+import { FiSettings } from "react-icons/fi";
+import { MdOutlineLogout } from "react-icons/md";
 
 const iconContextValue = { color: "var(--accent-color)" };
 
-const Navbar = ({ toggleMobileMenu, toggled }) => {
+const handleLogout = () => {
+  localStorage.removeItem("user");
+  window.dispatchEvent(new Event("userLogout"));
+};
+
+const Navbar = ({ toggleMobileMenu, toggled, loggedIn }) => {
   const handleLinkClick = () => {
     if (toggled) {
       toggleMobileMenu();
@@ -58,30 +65,55 @@ const Navbar = ({ toggleMobileMenu, toggled }) => {
                   Play Now
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/login"
-                  className={({ isActive }) =>
-                    "nav-links" + (isActive ? " activated" : "")
-                  }
-                  onClick={handleLinkClick}
-                >
-                  <CiLogin className="navbar-icon" />
-                  Login
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/register"
-                  className={({ isActive }) =>
-                    "nav-links" + (isActive ? " activated" : "")
-                  }
-                  onClick={handleLinkClick}
-                >
-                  <BsPersonAdd className="navbar-icon" />
-                  Register
-                </NavLink>
-              </li>
+              {loggedIn ? (
+                <>
+                  <li className="nav-item">
+                    <NavLink
+                      to="/settings"
+                      className={({ isActive }) =>
+                        "nav-links" + (isActive ? " activated" : "")
+                      }
+                      onClick={handleLinkClick}
+                    >
+                      <FiSettings className="navbar-icon" />
+                      Settings
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/" onClick={handleLogout} className="nav-links">
+                      <MdOutlineLogout className="navbar-icon" />
+                      Logout
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <NavLink
+                      to="/login"
+                      className={({ isActive }) =>
+                        "nav-links" + (isActive ? " activated" : "")
+                      }
+                      onClick={handleLinkClick}
+                    >
+                      <CiLogin className="navbar-icon" />
+                      Login
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      to="/register"
+                      className={({ isActive }) =>
+                        "nav-links" + (isActive ? " activated" : "")
+                      }
+                      onClick={handleLinkClick}
+                    >
+                      <BsPersonAdd className="navbar-icon" />
+                      Register
+                    </NavLink>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </nav>

@@ -7,10 +7,12 @@ import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 const Carousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const { title, text, link, image } = carouselData[currentImageIndex];
+  const [slideDirection, setSlideDirection] = useState("right");
+  const { title, text, link } = carouselData[currentImageIndex];
   const intervalRef = useRef(null);
 
   const goToPreviousImage = () => {
+    setSlideDirection("left");
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? carouselData.length - 1 : prevIndex - 1
     );
@@ -18,12 +20,12 @@ const Carousel = () => {
   };
 
   const goToNextImage = () => {
+    setSlideDirection("right");
     setCurrentImageIndex((prevIndex) =>
       prevIndex === carouselData.length - 1 ? 0 : prevIndex + 1
     );
     resetInterval();
   };
-
   const resetInterval = useCallback(() => {
     clearInterval(intervalRef.current);
     intervalRef.current = setInterval(goToNextImage, 6000);
@@ -47,11 +49,22 @@ const Carousel = () => {
         </a>
       </div>
       <div className="carousel-image-container">
-        <img
-          src={image}
-          alt={`Image ${currentImageIndex}`}
-          className="carousel-image"
-        />
+        {carouselData.map((item, index) => (
+          <img
+            key={index}
+            src={item.image}
+            alt={`Image ${index}`}
+            className={`carousel-image ${
+              index === currentImageIndex
+                ? ""
+                : slideDirection === "right"
+                ? "slide-out-right"
+                : slideDirection === "left"
+                ? "slide-out-left"
+                : ""
+            }`}
+          />
+        ))}
       </div>
       <div className="carousel-indicators">
         {carouselData.map((item, index) => (

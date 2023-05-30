@@ -9,7 +9,6 @@ import Settings from "./routes/Settings";
 import "./App.css";
 import "./index.css";
 import Navbar from "./components/Navbar";
-import Navbar_authenticated from "./components/Navbar_authenticated";
 
 const AppLayout = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,9 +23,11 @@ const AppLayout = () => {
     setIsLoggedIn(!!userData);
     const handleUserLogout = () => {
       setIsLoggedIn(false);
+      console.log("logged out");
     };
     const handleUserLogin = () => {
       setIsLoggedIn(true);
+      console.log("logged in");
     };
     window.addEventListener("userLogout", handleUserLogout);
     window.addEventListener("userLogin", handleUserLogin);
@@ -52,18 +53,11 @@ const AppLayout = () => {
   return (
     <>
       <div className={isMobileMenuOpen ? "menu-toggle" : ""}>
-        {!isLoggedIn && (
-          <Navbar
-            toggleMobileMenu={toggleMobileMenu}
-            toggled={isMobileMenuOpen}
-          />
-        )}
-        {isLoggedIn && (
-          <Navbar_authenticated
-            toggleMobileMenu={toggleMobileMenu}
-            toggled={isMobileMenuOpen}
-          />
-        )}
+        <Navbar
+          toggleMobileMenu={toggleMobileMenu}
+          toggled={isMobileMenuOpen}
+          loggedIn={isLoggedIn}
+        />
       </div>
       <Outlet />
       <Footer />
