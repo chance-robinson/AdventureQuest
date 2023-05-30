@@ -1,14 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Footer from "./components/Footer";
-import Home from "./routes/Home";
-import Login from "./routes/Login";
-import Register from "./routes/Register";
-import Play from "./routes/Play";
-import Settings from "./routes/Settings";
 import "./App.css";
 import "./index.css";
+import Footer from "./components/Footer";
+import Home from "./routes/Home";
 import Navbar from "./components/Navbar";
+const Login = lazy(() => import("./routes/Login"));
+const Register = lazy(() => import("./routes/Register"));
+const Play = lazy(() => import("./routes/Play"));
+const Settings = lazy(() => import("./routes/Settings"));
+
 
 const AppLayout = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -59,7 +60,9 @@ const AppLayout = () => {
           loggedIn={isLoggedIn}
         />
       </div>
-      <Outlet />
+      <Suspense>
+        <Outlet fallback={<h1>Still Loading...</h1>}/>
+      </Suspense>
       <Footer />
     </>
   );

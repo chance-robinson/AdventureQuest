@@ -51,6 +51,7 @@ const Carousel = () => {
       <div className="carousel-image-container">
         {carouselData.map((item, index) => (
           <img
+            loading="lazy"
             key={index}
             src={item.image}
             alt={`Image ${index}`}
